@@ -691,7 +691,7 @@ function parse_commands(line)
         if commands["B"] then
             cmd_str = cmd_str .. "B "
         end;
-        gui.text(250, 50, cmd_str);
+        gui.text(150, 50, cmd_str);
             
         joypad.set(1, commands);
 

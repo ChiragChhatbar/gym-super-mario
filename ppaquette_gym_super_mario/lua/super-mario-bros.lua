@@ -672,6 +672,27 @@ function parse_commands(line)
         commands["B"] = ((parts[6] == "1") or (parts[6] == "true"));
         commands["start"] = false;
         commands["select"] = false;
+        cmd_str = ""
+        if commands["up"] then
+            cmd_str = cmd_str .. "UP "
+        end;
+        if commands["down"] then
+            cmd_str = cmd_str .. "DOWN "
+        end;
+        if commands["left"] then
+            cmd_str = cmd_str .. "LEFT "
+        end;
+        if commands["right"] then
+            cmd_str = cmd_str .. "RIGHT "
+        end;
+        if commands["A"] then
+            cmd_str = cmd_str .. "A "
+        end;
+        if commands["B"] then
+            cmd_str = cmd_str .. "B "
+        end;
+        gui.text(50, 50, cmd_str);
+            
         joypad.set(1, commands);
 
     -- Noop at beginning of level (to simulate seed)
